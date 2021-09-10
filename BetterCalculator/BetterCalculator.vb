@@ -43,14 +43,25 @@ Module BetterCalculator
                 operator1 = CInt(Console.ReadLine())
                 If operator1 = 1 Then
                     Console.WriteLine(num1 + num2)
+                    decision = True
                 ElseIf operator1 = 2 Then
                     Console.WriteLine(num1 - num2)
+                    decision = True
                 ElseIf operator1 = 3 Then
                     Console.WriteLine(num1 * num2)
+                    decision = True
                 ElseIf operator1 = 4 Then
                     Console.WriteLine(num1 / num2)
+                    decision = True
+                ElseIf operator1 > 4 Then
+                    decision = False
+                    Console.WriteLine("Choose one of the following options:")
+                    Console.WriteLine("1. Add")
+                    Console.WriteLine("2. Subtract")
+                    Console.WriteLine("3. Multiply")
+                    Console.WriteLine("4. Divide")
                 End If
-                decision = True
+
             Catch
                 Console.WriteLine("Choose one of the following options:")
                 Console.WriteLine("1. Add")
