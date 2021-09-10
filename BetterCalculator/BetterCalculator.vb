@@ -9,7 +9,9 @@ Module BetterCalculator
         Dim input2 As Boolean = False
         Dim decision As Boolean = False
         Dim operator1 As Integer
-        Do
+        Dim quit1 As String
+        Dim exit1 As Boolean = False
+        Do While exit1 = False
             Console.WriteLine("Please enter two numbers. Enter Q at any time to quit.")
             Console.WriteLine("Choose a number")
             Do While input1 = False
@@ -76,7 +78,6 @@ Module BetterCalculator
                     decision = False
 
                 End Try
-
             Loop
             input1 = False
             input2 = False
