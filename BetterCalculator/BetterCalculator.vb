@@ -9,9 +9,8 @@ Module BetterCalculator
         Dim input2 As Boolean = False
         Dim decision As Boolean = False
         Dim operator1 As Integer
-
-
-        Console.WriteLine("Please enter two numbers. Enter Q at any time to quit.")
+        Do
+            Console.WriteLine("Please enter two numbers. Enter Q at any time to quit.")
             Console.WriteLine("Choose a number")
             Do While input1 = False
                 Try
@@ -30,8 +29,8 @@ Module BetterCalculator
                     Console.WriteLine("You entered " & num2)
                     input2 = True
                 Catch
-                Console.WriteLine("Please enter a whole number.")
-                input2 = False
+                    Console.WriteLine("Please enter a whole number.")
+                    input2 = False
                 End Try
             Loop
             Console.WriteLine("Choose one of the following options:")
@@ -43,24 +42,24 @@ Module BetterCalculator
             Do While decision = False
                 Try
                     operator1 = CInt(Console.ReadLine())
-                If operator1 = 1 Then
-                    Console.WriteLine("You entered 1")
-                    Console.WriteLine(num1 & "+" & num2 & "=" & num1 + num2)
-                    decision = True
-                ElseIf operator1 = 2 Then
-                    Console.WriteLine("You entered 2")
-                    Console.WriteLine(num1 & "-" & num2 & "=" & num1 - num2)
-                    decision = True
-                ElseIf operator1 = 3 Then
-                    Console.WriteLine("You entered 3")
-                    Console.WriteLine(num1 & "*" & num2 & "=" & num1 * num2)
-                    decision = True
-                ElseIf operator1 = 4 Then
-                    Console.WriteLine("You entered 4")
-                    Console.WriteLine(num1 & "/" & num2 & "=" & num1 / num2)
-                    decision = True
-                ElseIf operator1 > 4 Or operator1 = 0 Then
-                    decision = False
+                    If operator1 = 1 Then
+                        Console.WriteLine("You entered 1")
+                        Console.WriteLine(num1 & "+" & num2 & "=" & num1 + num2)
+                        decision = True
+                    ElseIf operator1 = 2 Then
+                        Console.WriteLine("You entered 2")
+                        Console.WriteLine(num1 & "-" & num2 & "=" & num1 - num2)
+                        decision = True
+                    ElseIf operator1 = 3 Then
+                        Console.WriteLine("You entered 3")
+                        Console.WriteLine(num1 & "*" & num2 & "=" & num1 * num2)
+                        decision = True
+                    ElseIf operator1 = 4 Then
+                        Console.WriteLine("You entered 4")
+                        Console.WriteLine(num1 & "/" & num2 & "=" & num1 / num2)
+                        decision = True
+                    ElseIf operator1 > 4 Or operator1 = 0 Then
+                        decision = False
                         Console.WriteLine("Choose one of the following options:")
                         Console.WriteLine("1. Add")
                         Console.WriteLine("2. Subtract")
@@ -79,7 +78,10 @@ Module BetterCalculator
                 End Try
 
             Loop
-
+            input1 = False
+            input2 = False
+            decision = False
+        Loop
         Console.WriteLine("Good job!")
         Console.Read()
 
