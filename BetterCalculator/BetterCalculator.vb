@@ -3,12 +3,12 @@ Option Explicit On
 Option Compare Text
 Module BetterCalculator
     Sub Main()
-        Dim num1 As Integer
+        Dim num1 As Double
         Dim input1 As Boolean = False
-        Dim num2 As Integer
+        Dim num2 As Double
         Dim input2 As Boolean = False
         Dim decision As Boolean = False
-        Dim operator1 As Integer
+        Dim operator1 As Double
         Dim userInput As String
         Dim exit1 As Boolean = False
 
@@ -20,7 +20,7 @@ Module BetterCalculator
             Do While input1 = False
                 Try
                     userInput = Console.ReadLine()
-                    num1 = CInt(userInput)
+                    num1 = CDbl(userInput)
                     Console.WriteLine("You entered " & num1)
                     input1 = True
                 Catch
@@ -30,6 +30,7 @@ Module BetterCalculator
                         exit1 = True
 
                     Else
+                        Console.WriteLine("You entered " & userInput)
                         Console.WriteLine("Please enter a whole number.")
                         input1 = False
                     End If
@@ -38,11 +39,11 @@ Module BetterCalculator
                 End Try
             Loop
             If exit1 <> True Then
-                Console.WriteLine("Choose a second number.")
+                Console.WriteLine("Choose a number.")
                 Do While input2 = False
                     Try
                         userInput = Console.ReadLine()
-                        num2 = CInt(userInput)
+                        num2 = CDbl(userInput)
                         Console.WriteLine("You entered " & num2)
                         input2 = True
                     Catch
@@ -51,6 +52,7 @@ Module BetterCalculator
                             input2 = True
                             exit1 = True
                         Else
+                            Console.WriteLine("You entered " & userInput)
                             Console.WriteLine("Please enter a whole number.")
                             input2 = False
                         End If
@@ -70,7 +72,7 @@ Module BetterCalculator
                     Do While decision = False
                         Try
                             userInput = (Console.ReadLine())
-                            operator1 = CInt(userInput)
+                            operator1 = CDbl(userInput)
                             If operator1 = 1 Then
                                 Console.WriteLine("You entered 1")
                                 Console.WriteLine(num1 & "+" & num2 & "=" & num1 + num2)
@@ -88,7 +90,7 @@ Module BetterCalculator
                                 Console.WriteLine(num1 & "/" & num2 & "=" & num1 / num2)
                                 decision = True
 
-                            ElseIf operator1 > 4 Or operator1 < 1 Then
+                            Else
                                 decision = False
                                 Console.WriteLine("Choose one of the following options:")
                                 Console.WriteLine("1. Add")
@@ -119,9 +121,10 @@ Module BetterCalculator
 
             End If
         Loop
-
-        Console.WriteLine("Program terminated")
-        Console.Read()
+        Console.WriteLine("You entered Q")
+        Console.WriteLine("Have a nice day.")
+        Console.WriteLine("Press ENTER to close this window.")
+        Console.ReadLine()
 
     End Sub
 
