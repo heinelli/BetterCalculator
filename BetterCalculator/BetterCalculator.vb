@@ -19,7 +19,7 @@ Module BetterCalculator
         Dim exit1 As Boolean = False
 
 
-        Do Until exit1 = True
+        Do Until exit1 = True                                   'exit1 is used to end the entire program once "Q" has been pressed.
             Console.WriteLine("Please enter two numbers. Enter Q at any time to quit.")
             Console.WriteLine("Choose a number")
 
@@ -28,7 +28,7 @@ Module BetterCalculator
                     userInput = Console.ReadLine()
                     num1 = CDbl(userInput)                      'Causes exception if any input other than a number is typed.
                     Console.WriteLine("You entered " & num1)
-                    input1 = True
+                    input1 = True                               'input1 is used to end this loop when the proper input has been received.
                 Catch
                     If userInput = "Q" Then
                         input1 = True
@@ -74,7 +74,7 @@ Module BetterCalculator
                             If operator1 = 1 Then
                                 Console.WriteLine("You entered 1")
                                 Console.WriteLine(num1 & "+" & num2 & "=" & num1 + num2)
-                                decision = True
+                                decision = True                 'decision is used to end this loop when the proper input has been received.
                             ElseIf operator1 = 2 Then
                                 Console.WriteLine("You entered 2")
                                 Console.WriteLine(num1 & "-" & num2 & "=" & num1 - num2)
